@@ -11,7 +11,8 @@ import { middleware } from '#start/kernel'
 import { controllers } from '#generated/controllers'
 import router from '@adonisjs/core/services/router'
 
-router.on('/').render('pages/home').as('home')
+router.get('/', () => "Hello World!")
+router.get('/posts/:id', [controllers.Teams, 'index'])
 
 router
   .group(() => {
