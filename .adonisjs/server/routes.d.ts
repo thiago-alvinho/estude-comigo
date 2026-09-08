@@ -4,22 +4,28 @@ type ParamValue = string | number | bigint | boolean
 
 export type ScannedRoutes = {
   ALL: {
-    'teams.index': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
     'new_account.create': { paramsTuple?: []; params?: {} }
     'new_account.store': { paramsTuple?: []; params?: {} }
     'session.create': { paramsTuple?: []; params?: {} }
     'session.store': { paramsTuple?: []; params?: {} }
     'session.destroy': { paramsTuple?: []; params?: {} }
+    'teams': { paramsTuple?: []; params?: {} }
+    'myTeams': { paramsTuple?: []; params?: {} }
+    'enrollment': { paramsTuple?: []; params?: {} }
   }
   GET: {
-    'teams.index': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
     'new_account.create': { paramsTuple?: []; params?: {} }
     'session.create': { paramsTuple?: []; params?: {} }
+    'teams': { paramsTuple?: []; params?: {} }
+    'myTeams': { paramsTuple?: []; params?: {} }
+    'enrollment': { paramsTuple?: []; params?: {} }
   }
   HEAD: {
-    'teams.index': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
     'new_account.create': { paramsTuple?: []; params?: {} }
     'session.create': { paramsTuple?: []; params?: {} }
+    'teams': { paramsTuple?: []; params?: {} }
+    'myTeams': { paramsTuple?: []; params?: {} }
+    'enrollment': { paramsTuple?: []; params?: {} }
   }
   POST: {
     'new_account.store': { paramsTuple?: []; params?: {} }

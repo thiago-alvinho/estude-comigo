@@ -1,7 +1,6 @@
 import factory from '@adonisjs/lucid/factories'
 import User from '#models/user'
-// Dependência circular
-//import { UserTeamFactory } from '#database/factories/user_team_factory'
+import { UserTeamFactory } from '#database/factories/user_team_factory'
 
 export const UserFactory = factory
   .define(User, async ({ faker }) => {
@@ -11,5 +10,5 @@ export const UserFactory = factory
       email: faker.internet.email()
     }
   })
-  .relation('userTeams', () => import('#database/factories/user_team_factory').then((m) => m.UserTeamFactory))
+  .relation('userTeams',() => UserTeamFactory)
   .build()

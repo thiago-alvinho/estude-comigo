@@ -11,9 +11,6 @@ import { middleware } from '#start/kernel'
 import { controllers } from '#generated/controllers'
 import router from '@adonisjs/core/services/router'
 
-router.get('/', () => "Hello World!")
-router.get('/posts/:id', [controllers.Teams, 'index'])
-
 router
   .group(() => {
     router.get('signup', [controllers.NewAccount, 'create'])
@@ -27,5 +24,8 @@ router
 router
   .group(() => {
     router.post('logout', [controllers.Session, 'destroy'])
+    router.get('teams', [controllers.Teams, 'index']).as('teams')
+    router.get('myTeams', [controllers.Teams, 'myTeams']).as('myTeams')
+    router.get('enrollment', [controllers.Enrollments, 'store']).as('enrollment')
   })
   .use(middleware.auth())
